@@ -11,6 +11,9 @@
 		41112AA32B246F8700E4CF4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41112AA22B246F8700E4CF4B /* ContentView.swift */; };
 		41112AA52B246F8A00E4CF4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41112AA42B246F8A00E4CF4B /* Assets.xcassets */; };
 		41112AA82B246F8A00E4CF4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41112AA72B246F8A00E4CF4B /* Preview Assets.xcassets */; };
+		41112ABA2B24710600E4CF4B /* backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41112AB92B24710600E4CF4B /* backend.swift */; };
+		41112BA22B2481D500E4CF4B /* AWSEC2 in Frameworks */ = {isa = PBXBuildFile; productRef = 41112BA12B2481D500E4CF4B /* AWSEC2 */; };
+		41FB3FC82B24CC95004CE5A2 /* credentials.txt in Resources */ = {isa = PBXBuildFile; fileRef = 41FB3FC72B24CC95004CE5A2 /* credentials.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		41112AA22B246F8700E4CF4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41112AA42B246F8A00E4CF4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41112AA72B246F8A00E4CF4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		41112AB92B24710600E4CF4B /* backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backend.swift; sourceTree = "<group>"; };
+		41FB3FC72B24CC95004CE5A2 /* credentials.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = credentials.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41112BA22B2481D500E4CF4B /* AWSEC2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,6 +41,7 @@
 		41112A942B246F8700E4CF4B = {
 			isa = PBXGroup;
 			children = (
+				41112AB92B24710600E4CF4B /* backend.swift */,
 				41112A9F2B246F8700E4CF4B /* AWS IP Switcher */,
 				41112A9E2B246F8700E4CF4B /* Products */,
 			);
@@ -54,6 +61,7 @@
 				41112AA02B246F8700E4CF4B /* AWS_IP_SwitcherApp.swift */,
 				41112AA22B246F8700E4CF4B /* ContentView.swift */,
 				41112AA42B246F8A00E4CF4B /* Assets.xcassets */,
+				41FB3FC72B24CC95004CE5A2 /* credentials.txt */,
 				41112AA62B246F8A00E4CF4B /* Preview Content */,
 			);
 			path = "AWS IP Switcher";
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = "AWS IP Switcher";
+			packageProductDependencies = (
+				41112BA12B2481D500E4CF4B /* AWSEC2 */,
+			);
 			productName = "AWS IP Switcher";
 			productReference = 41112A9D2B246F8700E4CF4B /* AWS IP Switcher.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 41112A942B246F8700E4CF4B;
+			packageReferences = (
+				41112AAE2B2470C400E4CF4B /* XCRemoteSwiftPackageReference "aws-sdk-swift" */,
+			);
 			productRefGroup = 41112A9E2B246F8700E4CF4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41112AA82B246F8A00E4CF4B /* Preview Assets.xcassets in Resources */,
+				41FB3FC82B24CC95004CE5A2 /* credentials.txt in Resources */,
 				41112AA52B246F8A00E4CF4B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41112AA32B246F8700E4CF4B /* ContentView.swift in Sources */,
+				41112ABA2B24710600E4CF4B /* backend.swift in Sources */,
 				41112AA12B246F8700E4CF4B /* AWS_IP_SwitcherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +358,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41112AAE2B2470C400E4CF4B /* XCRemoteSwiftPackageReference "aws-sdk-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/awslabs/aws-sdk-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.32.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41112BA12B2481D500E4CF4B /* AWSEC2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41112AAE2B2470C400E4CF4B /* XCRemoteSwiftPackageReference "aws-sdk-swift" */;
+			productName = AWSEC2;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 41112A952B246F8700E4CF4B /* Project object */;
 }

@@ -8,12 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var backend = Backend.single()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(backend.status)
+            Text(backend.instanceID)
+            Text(backend.publicAddress)
+            Button("Change IP"){
+                Task {
+                    do {
+                        try await backend.changeIPAsync()
+                    } catch {
+                        // do nothing
+                    }
+                }
+            }
         }
         .padding()
     }
